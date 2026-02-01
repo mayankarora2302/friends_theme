@@ -74,7 +74,7 @@ export function getHeroPhoto(dayNumber: number = 0): string {
         5: ALL_PHOTOS[13], // Day 5 - Promise Day
         6: ALL_PHOTOS[16], // Day 6 - Hug Day
         7: ALL_PHOTOS[19], // Day 7 - Kiss Day
-        8: ALL_PHOTOS[22], // Day 8 - Valentine's Day
+        8: ALL_PHOTOS[5], // Day 8 - Valentine's Day
     };
 
     return heroPhotos[dayNumber] || ALL_PHOTOS[0];

@@ -38,15 +38,9 @@ export const DAY_THEMES = {
 
 /**
  * Check if a specific day should be unlocked based on current date
- * For development: All days are unlocked
- * For production: Days unlock on their respective dates
+ * Episodes unlock on their respective Valentine's Week dates
  */
 export function isDayUnlockedByDate(dayNumber: number): boolean {
-    // Development mode - unlock all days
-    if (process.env.NODE_ENV === 'development') {
-        return true;
-    }
-
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
