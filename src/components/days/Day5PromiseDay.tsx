@@ -51,7 +51,7 @@ export default function Day5PromiseDay() {
                     </div>
                     <div className="p-4 bg-white">
                         <p className="text-lg font-handwritten text-center text-gray-800">
-                            Promises we'll keep forever 🤝
+                            Promises we&apos;ll keep forever 🤝
                         </p>
                     </div>
                 </div>

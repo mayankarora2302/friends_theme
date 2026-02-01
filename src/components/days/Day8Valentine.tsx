@@ -150,7 +150,7 @@ export default function Day8Valentine() {
                 className="glass rounded-2xl p-8"
             >
                 <h3 className="text-3xl font-bold text-center mb-8 text-friends-romantic-heart">
-                    Ryan's Love Letter to Shubhra 💌
+                    Ryan&apos;s Love Letter to Shubhra 💌
                 </h3>
                 <div className="max-w-3xl mx-auto font-handwritten text-xl text-gray-800 leading-relaxed">
                     <p className="text-right text-lg text-gray-600 mb-6">
@@ -164,8 +164,8 @@ export default function Day8Valentine() {
                         className="typing-effect-container"
                     >
                         <p className="whitespace-pre-line">
-                            Baby, 😘 Happy Valentine's Day! 🌹 I wanna tell you how much you mean to me. I love everything about you hublu sen, from the way you smile to the way you make me feel. Your kindness, simplicity, and grace - it all draws me in. You're the sunshine that brightens up my day 🌞. I love how you care for others, your infectious laugh, and even your quirks. You're literally the best thing that's happened to me 💕. Grateful to have you in my life.. Love you soooooo much
-                            Every moment with you feels like a dream 💫. The way you understand me, support me, and make me feel seen. it's like nothing I've ever experienced before. Your touch ignites a fire  in my heart, and your love is my safe haven for me. I adore how we connect on every level - mind, body, and soul 💫. Your kindness blows me away 🌈 - the way you care for those around you, your compassion, and your generosity.you're a rare gem amd i hope i never loose you by my side. And your simplicity? 😍 It's beautiful, just like you. You make life more beautiful, more meaningful.I love you.Stay by me forever.  - Ryan
+                            Baby, 😘 Happy Valentine&apos;s Day! 🌹 I wanna tell you how much you mean to me. I love everything about you hublu sen, from the way you smile to the way you make me feel. Your kindness, simplicity, and grace - it all draws me in. You&apos;re the sunshine that brightens up my day 🌞. I love how you care for others, your infectious laugh, and even your quirks. You&apos;re literally the best thing that&apos;s happened to me 💕. Grateful to have you in my life.. Love you soooooo much
+                            Every moment with you feels like a dream 💫. The way you understand me, support me, and make me feel seen. it&apos;s like nothing I&apos;ve ever experienced before. Your touch ignites a fire  in my heart, and your love is my safe haven for me. I adore how we connect on every level - mind, body, and soul 💫. Your kindness blows me away 🌈 - the way you care for those around you, your compassion, and your generosity.you&apos;re a rare gem amd i hope i never loose you by my side. And your simplicity? 😍 It&apos;s beautiful, just like you. You make life more beautiful, more meaningful.I love you.Stay by me forever.  - Ryan
                         </p>
                     </motion.div>
 
