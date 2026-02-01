@@ -30,7 +30,8 @@ export default function HomePage() {
     }, [isAuthenticated, router, unlockDay]);
 
     const handleEpisodeClick = (dayNumber: number) => {
-        if (isDayUnlocked(dayNumber)) {
+        // Only allow navigation if the date has passed
+        if (isDayUnlockedByDate(dayNumber)) {
             router.push(`/day/${dayNumber}`);
         }
     };
@@ -92,7 +93,9 @@ export default function HomePage() {
             <main className="relative z-10 container mx-auto px-4 pb-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((dayNumber) => {
-                        const unlocked = isDayUnlocked(dayNumber);
+                        // Episode unlocks ONLY based on date, not localStorage
+                        // This ensures episodes are locked until their Valentine's Week date
+                        const unlocked = isDayUnlockedByDate(dayNumber);
                         const dayName = DAY_NAMES[dayNumber as keyof typeof DAY_NAMES];
                         const theme = DAY_THEMES[dayNumber as keyof typeof DAY_THEMES];
 

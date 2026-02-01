@@ -1,17 +1,17 @@
 /**
  * Date utilities for Valentine's Week episode unlocking
- * Valentine's Week: Feb 7-14, 2026
+ * Valentine's Week 2026 dates
+ * Each day unlocks on its respective date
  */
-
 export const VALENTINE_WEEK_2026 = {
-    1: new Date('2026-02-07'), // Rose Day
-    2: new Date('2026-02-08'), // Propose Day
-    3: new Date('2026-02-09'), // Chocolate Day
-    4: new Date('2026-02-10'), // Teddy Day
-    5: new Date('2026-02-11'), // Promise Day
-    6: new Date('2026-02-12'), // Hug Day
-    7: new Date('2026-02-13'), // Kiss Day
-    8: new Date('2026-02-14'), // Valentine's Day
+    1: new Date('2026-02-07'), // Rose Day - Feb 7
+    2: new Date('2026-02-08'), // Propose Day - Feb 8
+    3: new Date('2026-02-09'), // Chocolate Day - Feb 9
+    4: new Date('2026-02-10'), // Teddy Day - Feb 10
+    5: new Date('2026-02-11'), // Promise Day - Feb 11
+    6: new Date('2026-02-12'), // Hug Day - Feb 12
+    7: new Date('2026-02-13'), // Kiss Day - Feb 13
+    8: new Date('2026-02-14'), // Valentine's Day - Feb 14
 };
 
 export const DAY_NAMES = {
@@ -47,7 +47,11 @@ export function isDayUnlockedByDate(dayNumber: number): boolean {
     const unlockDate = VALENTINE_WEEK_2026[dayNumber as keyof typeof VALENTINE_WEEK_2026];
     if (!unlockDate) return false;
 
-    return today >= unlockDate;
+    // Normalize unlock date to midnight for accurate comparison
+    const normalizedUnlockDate = new Date(unlockDate);
+    normalizedUnlockDate.setHours(0, 0, 0, 0);
+
+    return today >= normalizedUnlockDate;
 }
 
 /**

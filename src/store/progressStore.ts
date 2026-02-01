@@ -54,19 +54,14 @@ const useProgressStore = create<ProgressState>()(
 
             // Episode Progress
             completeDay: (dayNumber: number) => {
-                const { completedDays, unlockedDays } = get();
+                const { completedDays } = get();
                 if (!completedDays.includes(dayNumber)) {
                     const newCompleted = [...completedDays, dayNumber];
-                    const newUnlocked = [...unlockedDays];
 
-                    // Unlock next day when current day is completed
-                    if (dayNumber < 8 && !newUnlocked.includes(dayNumber + 1)) {
-                        newUnlocked.push(dayNumber + 1);
-                    }
-
+                    // Only mark as completed, do NOT unlock next day
+                    // Days unlock based on date only (handled in home page)
                     set({
-                        completedDays: newCompleted,
-                        unlockedDays: newUnlocked
+                        completedDays: newCompleted
                     });
                 }
             },

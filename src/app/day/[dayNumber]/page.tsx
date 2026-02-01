@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import useProgressStore from '@/store/progressStore';
-import { DAY_NAMES, DAY_THEMES } from '@/utils/dateUtils';
+import { DAY_NAMES, DAY_THEMES, isDayUnlockedByDate } from '@/utils/dateUtils';
 import FloatingHearts from '@/components/effects/FloatingHearts';
 import CursorTrail from '@/components/effects/CursorTrail';
 import ReactionNote from '@/components/reactions/ReactionNote';
@@ -41,11 +41,12 @@ export default function DayPage({ params }: { params: { dayNumber: string } }) {
             return;
         }
 
-        if (!isDayUnlocked(dayNumber)) {
+        // Check if day is unlocked by date, not localStorage
+        if (!isDayUnlockedByDate(dayNumber)) {
             router.push('/home');
             return;
         }
-    }, [isAuthenticated, dayNumber, isDayUnlocked, router]);
+    }, [isAuthenticated, dayNumber, router]);
 
     const DayComponent = DAY_COMPONENTS[dayNumber];
     const dayName = DAY_NAMES[dayNumber as keyof typeof DAY_NAMES];
