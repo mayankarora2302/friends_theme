@@ -1,0 +1,385 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Special+Elite&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --friends-purple: #8B5FBF;
+  --apartment-wall: #E8DCC4;
+  --apartment-door: #8B4513;
+  --perk-orange: #FF6B35;
+  --perk-brown: #6B4423;
+  --romantic-rose: #FF69B4;
+  --romantic-heart: #DC143C;
+  --pastel-pink: #FFB6C1;
+  --pastel-blue: #B0C4DE;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #E8DCC4 0%, #F4E8D8 100%);
+  color: #333;
+}
+
+/* Cursor Trail Effect */
+.cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* Polaroid Photo Style */
+.polaroid {
+  background: white;
+  padding: 12px;
+  padding-bottom: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.polaroid:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+/* Handwritten Text Style */
+.handwritten {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Typewriter Text Style */
+.typewriter {
+  font-family: 'Special Elite', monospace;
+  overflow: hidden;
+  border-right: 2px solid #333;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+}
+
+/* VHS Tape Effect */
+.vhs-tape {
+  position: relative;
+  filter: contrast(1.1) saturate(1.2);
+}
+
+.vhs-tape::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(0deg,
+      rgba(0, 0, 0, 0.03),
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 2px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vhs-locked {
+  filter: blur(8px) grayscale(0.5);
+  opacity: 0.6;
+}
+
+/* Sticky Note Style */
+.sticky-note {
+  background: #feff9c;
+  background: linear-gradient(135deg, #feff9c 0%, #f0e68c 100%);
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+}
+
+.sticky-note::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 10px 10px;
+}
+
+/* Heart Particle Animation */
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.heart-particle {
+  animation: float-up 6s linear infinite;
+}
+
+/* Sparkle Effect */
+.sparkle {
+  position: relative;
+}
+
+.sparkle::after {
+  content: '✨';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+/* Coffee Cup Steam Animation */
+@keyframes steam {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-20px) scaleX(1.2);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(-40px) scaleX(0.8);
+    opacity: 0;
+  }
+}
+
+.steam {
+  animation: steam 2s ease-in-out infinite;
+}
+
+/* Button Styles */
+.btn-friends {
+  background: var(--friends-purple);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(139, 95, 191, 0.3);
+}
+
+.btn-friends:hover {
+  background: #7a4fb0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(139, 95, 191, 0.4);
+}
+
+.btn-friends:active {
+  transform: translateY(0);
+}
+
+/* Episode Card Styles */
+.episode-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.episode-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.episode-card:hover::before {
+  left: 100%;
+}
+
+.episode-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Confetti Animation */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  animation: confetti-fall 3s linear infinite;
+}
+
+/* Loading Spinner */
+.loader {
+  border: 4px solid rgba(139, 95, 191, 0.1);
+  border-top: 4px solid var(--friends-purple);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scroll Animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--friends-purple);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7a4fb0;
+}
+
+/* 3D Perspective for Flip Cards */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Polaroid Frame Style */
+.polaroid-frame {
+  background: white;
+  padding: 16px;
+  padding-bottom: 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Typing Effect Animation */
+.typing-effect-container {
+  overflow: hidden;
+  border-right: 3px solid #DC143C;
+  white-space: pre-wrap;
+  animation: typing 8s steps(200, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  to {
+    max-height: 1000px;
+    opacity: 1;
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #DC143C;
+  }
+}
+
+/* Remove caret after animation completes */
+.typing-effect-container {
+  animation: typing 8s steps(200, end), blink-caret 0.75s step-end 8s 10, remove-caret 0s 15s forwards;
+}
+
+@keyframes remove-caret {
+  to {
+    border-right: none;
+  }
+}
